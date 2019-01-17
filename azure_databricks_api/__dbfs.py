@@ -533,8 +533,8 @@ class DbfsAPI(RESTBase):
         """
         file_size = os.path.getsize(file_path)
 
-        if file_size <= MB_BYTES:
-            return self.__put(dbfs_path, file_content_to_b64(file_path), overwrite=overwrite)
+        # if file_size <= MB_BYTES:
+        #     return self.__put(dbfs_path, file_content_to_b64(file_path), overwrite=overwrite)
 
         with open(file_path, 'rb') as file_obj:
             stream_handle = self.create(dbfs_path, overwrite)
